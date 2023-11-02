@@ -54,7 +54,7 @@ def wolfram_step_by_step():
 
 @app.route('/wolfram-conversation', methods=['POST', 'GET'])  # CONVERSE WITH IT LIKE A BOT
 def wolfram_conversation():
-    app_id = 'XVYGLH-XQP3YQ9VRP'
+    app_id = os.environ.get('WOLFRAM_CONVERSATION_KEY')
     data = request.get_json()
     query = data.get('query')
     conversationid = data.get('conversationID')
@@ -80,7 +80,7 @@ def wolfram_conversation():
 
 @app.route('/wolfram-LLM', methods=['POST', 'GET'])  # GENERATE A SINGLE LONG ANSWER LIKE CHATGPT
 def wolfram_llm():
-    app_id = 'XVYGLH-3T5WQYT852'
+    app_id = os.environ.get('WOLFRAM_LLM_KEY')
     data = request.get_json()
     query = data.get('query')
 
@@ -112,7 +112,7 @@ def wolfram_llm():
 
 @app.route('/wolfram-Speech', methods=['POST', 'GET'])  # Voice features
 def wolfram_speech():
-    app_id = 'XVYGLH-L9YQQ5QE58'
+    app_id = os.environ.get('WOLFRAM_SPEECH_KEY')
     data = request.get_json()
     query = data.get('query')
     print(query)

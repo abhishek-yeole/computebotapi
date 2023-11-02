@@ -7,6 +7,7 @@ import requests
 from flask import Flask, jsonify, make_response, request, render_template
 from flask_cors import CORS
 import mysql.connector
+import os
 
 app = Flask(__name__)
 CORS(app)
@@ -21,7 +22,7 @@ mysql = mysql.connector.connect(
 
 @app.route('/wolfram-step-by-step', methods=['POST', 'GET'])  # GENERATE STEP-BY-STEP SOLUTION
 def wolfram_step_by_step():
-    app_id = 'XVYGLH-2PYQT9REKU'
+    app_id = os.environ.get('WOLFRAM_STEPS_KEY')
     data = request.get_json()
     query = data.get('query')
 

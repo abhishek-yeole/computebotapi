@@ -1,1 +1,6 @@
 Flask==3.0.0
+flask-cors
+bcrypt
+mysql-connector-python
+gunicorn
+Jinja2

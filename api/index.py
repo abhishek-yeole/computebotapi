@@ -26,7 +26,6 @@ app.secret_key = "ComputeGPT-abhi-2023"
 def convert(s):
     math_symbols = {
         '+': 'plus',
-        '-': 'minus',
         '/': 'divided by',
     }
     for i in s:

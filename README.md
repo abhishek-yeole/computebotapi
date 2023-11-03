@@ -1,26 +1,26 @@
 [![ComputeGPT](https://i.ibb.co/WnSy5n2/Road-Sense-removebg-preview.png)](https://computegpt.vercel.app/)
 # ComputeGPT
-### Welcome to ComputeBot - Your Computational Companion.
+### Welcome to ComputeGPT - Your Computational Companion.
 
-ComputeBot is your one-stop solution for accurate and efficient mathematical problem-solving, powered by advanced LLM technology.
+ComputeGPT is your one-stop solution for accurate and efficient mathematical problem-solving, powered by advanced LLM technology.
 
 ### Our Mission
 
-At ComputeBot, our mission is to simplify complex mathematical problem-solving for users worldwide. We strive to provide a seamless and intuitive experience, enabling users to solve intricate computations effortlessly.
+At ComputeGPT, our mission is to simplify complex mathematical problem-solving for users worldwide. We strive to provide a seamless and intuitive experience, enabling users to solve intricate computations effortlessly.
 
 ### Features
 
 - Step by step solution to Math-related problems:
-  > ComputeBot offers a step-by-step breakdown of even the most intricate mathematical problems, ensuring a comprehensive understanding of the solution process.
+  > ComputeGPT offers a step-by-step breakdown of even the most intricate mathematical problems, ensuring a comprehensive understanding of the solution process.
 
 - LLM powered solutions:
-  > Empowered by the latest in Language Model technology, ComputeBot provides highly accurate and reliable solutions to a diverse range of computational challenges.
+  > Empowered by the latest in Language Model technology, ComputeGPT provides highly accurate and reliable solutions to a diverse range of computational challenges.
 
 - Speech/Voice interface:
-  > Interact with ComputeBot effortlessly using our intuitive voice interface. Ask complex math queries verbally and receive immediate, accurate responses.
+  > Interact with ComputeGPT effortlessly using our intuitive voice interface. Ask complex math queries verbally and receive immediate, accurate responses.
 
 - Conversation Bot:
-  > Engage in a seamless conversation with ComputeBot. Enjoy a continuous interaction experience as ComputeBot comprehends and responds to your queries in a natural, conversational manner.
+  > Engage in a seamless conversation with ComputeGPT. Enjoy a continuous interaction experience as ComputeGPT comprehends and responds to your queries in a natural, conversational manner.
 
 ## Visit Live Site
 

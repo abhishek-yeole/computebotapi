@@ -232,15 +232,15 @@ def register():
             mysql.commit()
             cursor.close()
 
-            msg["Subject"] = "RoadSense Verification"
-            msg["From"] = "smilecheck100@gmail.com"
+            msg["Subject"] = "ComputeGPT Verification"
+            msg["From"] = "storycircle123@gmail.com"
             msg["To"] = data.get('email')
 
             html_content = render_template('email.html', name=data.get('name'), otp=otp)
             msg.set_content(html_content, subtype='html')
 
             with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
-                smtp.login('smilecheck53@gmail.com', 'dczcfrdkthwcfoqu')
+                smtp.login('storycircle123@gmail.com', 'njoexkbwuscrwdhf')
                 smtp.send_message(msg)
 
             return jsonify({'success': True})
@@ -342,15 +342,15 @@ def forgot():
             mysql.commit()
             cursor.close()
 
-            msg["Subject"] = "RoadSense Verification"
-            msg["From"] = "smilecheck100@gmail.com"
+            msg["Subject"] = "ComputeGPT Verification"
+            msg["From"] = "storycircle123@gmail.com"
             msg["To"] = data.get('username')
 
             html_content = render_template('pass.html', name=user['name'], otp=otp)
             msg.set_content(html_content, subtype='html')
 
             with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
-                smtp.login('smilecheck23@gmail.com', 'dczcfrdkthwcfoqu')
+                smtp.login('storycircle123@gmail.com', 'njoexkbwuscrwdhf')
                 smtp.send_message(msg)
 
             return jsonify({'success': True})

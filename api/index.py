@@ -138,10 +138,6 @@ def wolfram_llm():
     data = request.get_json()
     res_query = data.get('query')
     query = convert(res_query)
-    
-    # Disclosed
-    ip = data.get('ip')
-    latlong = data.get('latLong')
 
     # Modifyable
     maxchars = data.get('maxChars')  # at most 6800
@@ -152,7 +148,7 @@ def wolfram_llm():
     units = data.get('units')  # "metric", "nonmetric"     Chosen based on caller's IP address
 
     # Construct the URL
-    url = f'http://api.wolframalpha.com/v2/query?input={query}&appid={app_id}&maxchars={maxchars}&ip={ip}&latlong={latlong}&units={units}&width={width}&maxwidth={maxwidth}&plotwidth={plotwidth}&mag={mag}&format=image'
+    url = f'http://api.wolframalpha.com/v2/query?input={query}&appid={app_id}&maxchars={maxchars}&units={units}&width={width}&maxwidth={maxwidth}&plotwidth={plotwidth}&mag={mag}&format=image'
 
     try:
         response = requests.get(url, stream=True)
@@ -173,12 +169,8 @@ def wolfram_speech():
 
     query = convert(res_query)
 
-    # Disclosed
-    ip = data.get('ip')
-    latlong = data.get('latLong')
-
     # Construct the URL
-    url = f'http://api.wolframalpha.com/v1/spoken?&appid={app_id}&i={query}&ip={ip}&latlong={latlong}'
+    url = f'http://api.wolframalpha.com/v1/spoken?&appid={app_id}&i={query}'
 
     try:
         response = requests.get(url, stream=True)

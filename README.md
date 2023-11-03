@@ -1,28 +1,52 @@
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fexamples%2Ftree%2Fmain%2Fpython%2Fflask3&demo-title=Flask%203%20%2B%20Vercel&demo-description=Use%20Flask%203%20on%20Vercel%20with%20Serverless%20Functions%20using%20the%20Python%20Runtime.&demo-url=https%3A%2F%2Fflask3-python-template.vercel.app%2F&demo-image=https://assets.vercel.com/image/upload/v1669994156/random/flask.png)
+[![ComputeGPT](https://i.ibb.co/WnSy5n2/Road-Sense-removebg-preview.png)](https://computegpt.vercel.app/)
+# ComputeGPT
+### Welcome to ComputeBot - Your Computational Companion.
 
-# Flask + Vercel
+ComputeBot is your one-stop solution for accurate and efficient mathematical problem-solving, powered by advanced LLM technology.
 
-This example shows how to use Flask 3 on Vercel with Serverless Functions using the [Python Runtime](https://vercel.com/docs/concepts/functions/serverless-functions/runtimes/python).
+### Our Mission
 
-## Demo
+At ComputeBot, our mission is to simplify complex mathematical problem-solving for users worldwide. We strive to provide a seamless and intuitive experience, enabling users to solve intricate computations effortlessly.
 
-https://flask3-python-template.vercel.app/
+### Features
 
-## How it Works
+- Step by step solution to Math-related problems:
+  > ComputeBot offers a step-by-step breakdown of even the most intricate mathematical problems, ensuring a comprehensive understanding of the solution process.
 
-This example uses the Web Server Gateway Interface (WSGI) with Flask to enable handling requests on Vercel with Serverless Functions.
+- LLM powered solutions:
+  > Empowered by the latest in Language Model technology, ComputeBot provides highly accurate and reliable solutions to a diverse range of computational challenges.
 
-## Running Locally
+- Speech/Voice interface:
+  > Interact with ComputeBot effortlessly using our intuitive voice interface. Ask complex math queries verbally and receive immediate, accurate responses.
 
-```bash
-npm i -g vercel
-vercel dev
-```
+- Conversation Bot:
+  > Engage in a seamless conversation with ComputeBot. Enjoy a continuous interaction experience as ComputeBot comprehends and responds to your queries in a natural, conversational manner.
 
-Your Flask application is now available at `http://localhost:3000`.
+## Visit Live Site
 
-## One-Click Deploy
+ComputeGPT is hosted using Vercel.
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=vercel-examples):
+_[ComputeGPT](https://computegpt.vercel.app/)_
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fexamples%2Ftree%2Fmain%2Fpython%2Fflask3&demo-title=Flask%203%20%2B%20Vercel&demo-description=Use%20Flask%203%20on%20Vercel%20with%20Serverless%20Functions%20using%20the%20Python%20Runtime.&demo-url=https%3A%2F%2Fflask3-python-template.vercel.app%2F&demo-image=https://assets.vercel.com/image/upload/v1669994156/random/flask.png)
+## Run it locally using your own Wolfram | Alpha Keys
+
+In the project directory, you can run:
+### `python -m venv c:\path\to\project`
+Setups the virtual Environment to start the runtime.
+
+### `pip install -r requirements.txt`
+
+Installs the required the libraries on the local machine. Also install required libraries if not installed use:
+
+> **NOTE:** Python version must be higher than 3.9. The project was developed on 3.11 python version.
+
+### Use your own keys to run the API's
+
+- Update the `index.py` file in the api folder.
+- Change the `os.environ.get('WOLFRAM_STEPS_KEY')`, others..., with your own keys for that particular `app_id`.
+
+### `flask --app main run --host 0.0.0.0`
+
+Runs the app in the development mode. Open [http://127.0.0.1:5000](http://127.0.0.1:5000) to view it in your browser.
+
+> **NOTE:** These are the API's endpoints that are developed. If you want to test the API's you can either change the config.jsx api Url's with `http://your-ip-address:5000/...` in the frontend of [https://github.com/abhishek-yeole/computegpt/blob/main/src/config.jsx](https://github.com/abhishek-yeole/computegpt/blob/main/src/config.jsx) or use POSTMAN or other services for it.

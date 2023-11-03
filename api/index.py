@@ -13,10 +13,10 @@ app = Flask(__name__)
 CORS(app)
 
 mysql = mysql.connector.connect(
-    host='sql12.freesqldatabase.com',
-    user='sql12653124',
-    password='kqM3CPBsqP',
-    database='sql12653124',
+    host= os.environ.get('MYSQL_HOST_NAME'),
+    user= os.environ.get('MYSQL_USER_DATABASE'),
+    password= os.environ.get('MYSQL_PASSWORD'),
+    database= os.environ.get('MYSQL_USER_DATABASE'),
     port=3306
 )
 

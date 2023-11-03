@@ -20,11 +20,64 @@ mysql = mysql.connector.connect(
     port=3306
 )
 
+app.secret_key = "ComputeGPT-abhi-2023"
+
+
+def convert(s):
+    math_symbols = {
+        '+': 'plus',
+        '-': 'minus',
+        '×': 'multiplied by',
+        '*': 'multiplied by',
+        '÷': 'divided by',
+        '/': 'divided by',
+        '=': 'is equal to',
+        '<': 'is smaller than',
+        '>': 'is larger than',
+        '≤': 'is smaller than or equal to',
+        '≥': 'is larger than or equal to',
+        '^': 'raised to the power of',
+        '√': 'square root of',
+        '%': 'percent',
+        '|x|': 'absolute value of x',
+        'π': 'Pi',
+        '∞': 'Infinity',
+        '∑': 'Summation',
+        'Δ': 'Delta or Change',
+        '∫': 'Integral of',
+        'd/dx': 'Derivative with respect to x',
+        '!': 'Factorial',
+        '≠': 'Not equal to',
+        '≈': 'Approximately equal to',
+        '∝': 'Proportional to',
+        '∥': 'Perpendicular to',
+        '⊆': 'Subset of',
+        '⊇': 'Superset of',
+        '||': 'Parallel to',
+        '∩': 'Intersection of sets',
+        '∪': 'Union of sets',
+        '∧': 'Logical AND operation',
+        '∨': 'Logical OR operation',
+        '∼': 'Logical NOT operation',
+        '¬': 'Logical NOT operation',
+        '∀': 'For all or Universal quantifier',
+        '∃': 'There exists or Existential quantifier',
+        '∮': 'Closed line integral'
+    }
+    for i in s:
+        if i in math_symbols:
+            s = s.replace(i, math_symbols[i])
+
+    return s
+
+
 @app.route('/wolfram-step-by-step', methods=['POST', 'GET'])  # GENERATE STEP-BY-STEP SOLUTION
 def wolfram_step_by_step():
     app_id = os.environ.get('WOLFRAM_STEPS_KEY')
     data = request.get_json()
-    query = data.get('query')
+    res_query = data.get('query')
+
+    query = convert(query)
 
     width = data.get('width')  # 500 pixels
     maxwidth = data.get('maxWidth')  # 500 pixels
@@ -47,7 +100,7 @@ def wolfram_step_by_step():
             # print(response.content)
             return make_response(response.content, 200, headers)
         else:
-            print(response.content)
+            return {'success': True, 'response': 'I cannot understand your input...'}
     except Exception as e:
         print("Exception")
 
@@ -56,7 +109,8 @@ def wolfram_step_by_step():
 def wolfram_conversation():
     app_id = os.environ.get('WOLFRAM_CONVERSATION_KEY')
     data = request.get_json()
-    query = data.get('query')
+    res_query = data.get('query')
+    query = convert(query)
     conversationid = data.get('conversationID')
 
     # Construct the URL
@@ -73,7 +127,7 @@ def wolfram_conversation():
             return {'success': True, 'response': botText}
         else:
             print(response.content)
-            return {'success': True, 'response': ''}
+            return {'success': True, 'response': 'I cannot understand your input...'}
     except Exception as e:
         print("Exception")
 
@@ -82,8 +136,9 @@ def wolfram_conversation():
 def wolfram_llm():
     app_id = os.environ.get('WOLFRAM_LLM_KEY')
     data = request.get_json()
-    query = data.get('query')
-
+    res_query = data.get('query')
+    query = convert(query)
+    
     # Disclosed
     ip = data.get('ip')
     latlong = data.get('latLong')
@@ -114,8 +169,9 @@ def wolfram_llm():
 def wolfram_speech():
     app_id = os.environ.get('WOLFRAM_SPEECH_KEY')
     data = request.get_json()
-    query = data.get('query')
-    print(query)
+    res_query = data.get('query')
+
+    query = convert(query)
 
     # Disclosed
     ip = data.get('ip')

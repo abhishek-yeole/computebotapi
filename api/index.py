@@ -77,7 +77,7 @@ def wolfram_step_by_step():
     data = request.get_json()
     res_query = data.get('query')
 
-    query = convert(query)
+    query = convert(res_query)
 
     width = data.get('width')  # 500 pixels
     maxwidth = data.get('maxWidth')  # 500 pixels
@@ -110,7 +110,7 @@ def wolfram_conversation():
     app_id = os.environ.get('WOLFRAM_CONVERSATION_KEY')
     data = request.get_json()
     res_query = data.get('query')
-    query = convert(query)
+    query = convert(res_query)
     conversationid = data.get('conversationID')
 
     # Construct the URL
@@ -137,7 +137,7 @@ def wolfram_llm():
     app_id = os.environ.get('WOLFRAM_LLM_KEY')
     data = request.get_json()
     res_query = data.get('query')
-    query = convert(query)
+    query = convert(res_query)
     
     # Disclosed
     ip = data.get('ip')
@@ -171,7 +171,7 @@ def wolfram_speech():
     data = request.get_json()
     res_query = data.get('query')
 
-    query = convert(query)
+    query = convert(res_query)
 
     # Disclosed
     ip = data.get('ip')

@@ -204,7 +204,7 @@ def register():
             msg.set_content(html_content, subtype='html')
 
             with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
-                smtp.login('storycircle123@gmail.com', 'njoexkbwuscrwdhf')
+                smtp.login('storycircle123@gmail.com', os.environ.get('GMAIL_APP_PASSWORD'))
                 smtp.send_message(msg)
 
             return jsonify({'success': True})
@@ -314,7 +314,7 @@ def forgot():
             msg.set_content(html_content, subtype='html')
 
             with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
-                smtp.login('storycircle123@gmail.com', 'njoexkbwuscrwdhf')
+                smtp.login('storycircle123@gmail.com', os.environ.get('GMAIL_APP_PASSWORD'))
                 smtp.send_message(msg)
 
             return jsonify({'success': True})
